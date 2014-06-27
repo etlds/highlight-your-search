@@ -1,0 +1,24 @@
+{
+  "name": "Highlight your Search",
+  "description": "Highlihgt the keywords that you searched in google",
+  "version": "0.1",
+  "permissions": [
+    "storage"
+  ],
+
+  "manifest_version": 2,
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*", "http://www.google.com/*"],
+      "js": ["catchkeywords.js"],
+      "run_at": "document_end"
+    },
+    {
+      "exclude_matches": ["https://www.google.com/*", "http://www.google.com/*"],
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["highlightkeywords.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
