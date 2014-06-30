@@ -1,7 +1,7 @@
 {
-  "name": "Highlight your Search",
-  "description": "Highlihgt the keywords that you searched in google",
-  "version": "0.1",
+  "name": "Highlight Search Keywords",
+  "description": "Highlight the keywords that you searched in google",
+  "version": "0.2",
   "permissions": [
     "storage"
   ],
