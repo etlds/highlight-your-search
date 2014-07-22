@@ -5,14 +5,14 @@ chrome.storage.local.get('value', function(result){
   if(result.value){
     var keywords = "(" + result.value.replace(/\s+/g, "|") + ")";
     console.log(keywords);
-    var rex = new RegExp("\\s+" + keywords + "\\s+", "ig");
+    var rex = new RegExp("(^|\\s)" + keywords + "\\W", "ig");
     console.log(rex);
     var tag_types = ["h1", "h2", "h3", "p", "div", "a"];
     for(var i = 0; i < tag_types.length; i++){
       var tags = document.getElementsByTagName(tag_types[i]);
       for(var j = 0; j < tags.length; j++){
         if(tags[j].childElementCount == 0){
-          tags[j].innerHTML = tags[j].innerHTML.replace(rex, " <span style='background-color: yellow;'>$1</span> ");
+          tags[j].innerHTML = tags[j].innerHTML.replace(rex, " <span style='background-color: yellow;'>$2</span> ");
         }
       }
     }
